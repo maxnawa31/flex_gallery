@@ -1,0 +1,99 @@
+html {
+  box-sizing: border-box;
+  background: #ffc600;
+  font-family: 'Economica', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel {
+  background: #6B0F9C;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  align-items: center;
+  /* Safari transitionend event.propertyName === flex */
+  /* Chrome + FF transitionend event.propertyName === flex-grow */
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+  font-size: 20px;
+  background-size: cover;
+  background-position: center;
+  flex:1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel1 {
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/91HCOmzwHIL._SL1500_.jpg");
+}
+.panel2 {
+  background-image:url("https://i.redd.it/4jg93ajk1mux.jpg");
+}
+
+.panel3 {
+  background-image: url("http://d36g5zibv7pj3i.cloudfront.net/2012/05/Beach-House-Bloom-Artwork1-1024x1024.jpg");
+}
+
+.panel4 {
+  background-image: url("https://images.genius.com/5d30f759c5d642adc96207aca2a61b93.1000x1000x1.jpg");
+}
+.panel5{
+  background-image: url("http://images.genius.com/9bb42c9c04b6a785672d325eef015749.1000x1000x1.jpg");
+}
+
+.panel > *{
+  margin:0;
+  width:100%;
+  transition:transform 0.5s;
+  flex:1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel>*:first-child {
+  transform: translateY(-100%);
+}
+
+.panel.open-active>*:first-child {
+  transform: translateY(0);
+}
+
+.panel>*:last-child {
+  transform: translateY(100%);
+}
+
+.panel.open-active>*:last-child {
+  transform: translateY(0);
+}
+
+.panel p {
+  text-transform: uppercase;
+  font-family: 'Economica', sans-serif;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  font-size: 2em;
+}
+
+.panel p:nth-child(2) {
+  font-size: 4em;
+}
+
+.panel.open {
+  flex: 5;
+  font-size: 40px;
+}
